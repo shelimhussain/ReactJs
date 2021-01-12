@@ -1,5 +1,5 @@
 import "./styles.css";
-/***************New Array methods***************/
+/***************Arrow functions***************/
 class FirstClass {
   constructor() {
     this._name = "ES6";
@@ -16,12 +16,7 @@ class FirstClass {
   }
 
   sayHelloEs6() {
-    let hiWords = ["Hey ", "Hi ", "Hello "];
-    /*Using Array Methods*/
-    hiWords = hiWords
-      .filter((x) => x.indexOf("He") === 0)
-      .map((x) => x.replace(" ", "o"));
-
+    const hiWords = ["Hey ", "Hi ", "Hello "];
     let hiPhrase = "";
 
     for (let hiWord of hiWords) {
@@ -42,4 +37,4 @@ var instance = new FirstClass();
 instance.name = "PHP"; /*Using setter method*/
 
 document.getElementById("app").innerHTML = instance.sayHelloEs6();
-/***************New Array methods***************/
+/***************Arrow functions***************/
