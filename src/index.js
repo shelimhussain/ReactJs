@@ -12,9 +12,10 @@ class FirstClass {
       hiPhrase += hiWord;
     }
     return hiPhrase + ", I'm going to learn " + this.name;
-    /* We will use const before varibale when the value 
-    will not getchnaged till the scope of the varibale finished 
-    else we will use let keyword.*/
+    /* We will use const keyword before varibale when the value 
+    will not getchnaged till the end of the scope of the varibale 
+    else we will use let keyword. Here in above example, 
+    the value for hiPhrase and i is getting changed with the loop*/
   }
 }
 var instance = new FirstClass();
