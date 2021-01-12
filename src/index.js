@@ -1,23 +1,21 @@
 import "./styles.css";
-/***************Let and const in ES5 and ES6 begin***************/
+/***************Template Strings***************/
 class FirstClass {
   constructor() {
     this.name = "ES6";
   }
-  sayHello() {
-    const times = 3;
-    const hiWord = "Hey ";
+  sayHelloEs6() {
+    const hiWords = ["Hey ", "Hi ", "Hello "];
     let hiPhrase = "";
-    for (let i = 0; i < times; i++) {
+    /*ES6 style of defining for of loop*/
+    for (let hiWord of hiWords) {
       hiPhrase += hiWord;
     }
-    return hiPhrase + ", I'm going to learn " + this.name;
-    /* We will use const keyword before varibale when the value 
-    will not getchnaged till the end of the scope of the varibale 
-    else we will use let keyword. Here in above example, 
-    the value for hiPhrase and i is getting changed with the loop*/
+    return `${hiPhrase} , 
+    I'm going to learn ${this.name}`;
+    /*Note: Template Strings can be multilined*/
   }
 }
 var instance = new FirstClass();
-document.getElementById("app").innerHTML = instance.sayHello();
-/***************Let and const in ES5 and ES6 end***************/
+document.getElementById("app").innerHTML = instance.sayHelloEs6();
+/***************Template Strings***************/
