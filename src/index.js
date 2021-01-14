@@ -1,49 +1,24 @@
 import "./styles.css";
-import BaseClass, { allhiWords } from "./utiles";
-/***************Modules***************/
-class FirstClass extends BaseClass {
-  constructor() {
-    super(); /*to access properties of BaseClass*/
-    this._name = "ES6";
-  }
+/***************Spread Operator***************/
+const user = {
+  firstname: "Shelim",
+  lastname: "Hussain"
+};
 
-  /*Getter method*/
-  get name() {
-    return `tech ${this._name}`;
-  }
+/* 3 dots is the spread operator*/
+/*Spread syntax can be used when all elements 
+from an object or array need to be 
+included in a list of some kind.*/
 
-  /*Setter Method*/
-  set name(value) {
-    this._name = value;
-  }
+/*With Object*/
+const admin = {
+  ...user,
+  isAdmin: true
+};
+console.log("Admin", admin);
 
-  sayHelloEs6() {
-    /*allhiWords varibale imported from utiles.js*/
-    let hiWords = allhiWords
-      .filter((x) => x.indexOf("He") === 0)
-      .map((x) => x.replace(" ", "o"));
-
-    let hiPhrase = "";
-
-    for (let hiWord of hiWords) {
-      hiPhrase += hiWord;
-    }
-
-    /* Arrow function*/
-    let great = () => {
-      return `${hiPhrase} , 
-      I'm going to learn ${this.name} 
-      by our teacher ${this.teacherName}`;
-    };
-
-    /* Here ${this.teacherName} is the property of BaseClass*/
-
-    return great();
-  }
-}
-var instance = new FirstClass();
-
-instance.name = "PHP"; /*Using setter method*/
-
-document.getElementById("app").innerHTML = instance.sayHelloEs6();
-/***************Modules***************/
+/*With Array*/
+const numbers = [1, 2];
+const moreNumbers = [...numbers, 3];
+console.log("More Numbers", moreNumbers);
+/***************Spread Operator***************/
